@@ -5,10 +5,10 @@ export function App() {
     return (
         <section className="app">
             <header className="app-header main-layout">
-                <h1>My App</h1>
+                <h1>Miss-Book</h1>
             </header>
             <main className="main-layout">
-                <Home />
+                {/* <Home /> */}
                 <BookIndex/>
             </main>
         </section>

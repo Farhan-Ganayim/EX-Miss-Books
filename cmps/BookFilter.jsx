@@ -1,0 +1,35 @@
+const { useEffect, useState } = React
+
+export function BookFilter({ filterBy, onSetFilterBy }) {
+
+    const [filterByToEdit, setfilterByToEdit] = useState({ ...filterBy })
+    useEffect(() => {
+        onSetFilterBy(filterByToEdit)
+
+    }, [filterByToEdit])
+    function onHandleChange({ target }) {
+        let { name: field, type, value } = target
+        if (type === 'number') value = +value
+        setfilterByToEdit(prevFilterBy => ({ ...prevFilterBy, [field]: value }))
+
+    }
+
+    function onSubmitForm(ev) {
+        ev.preventDefault()
+        // onSetFilterBy()
+    }
+    return (
+        <section className="book-filter">
+            <h2>Filter Our Books</h2>
+            <form onSubmit={onSubmitForm}>
+                <label htmlFor="txt">Title</label>
+                <input name="title" value={filterByToEdit.title} onChange={onHandleChange} type="text" id="txt" />
+
+                <label htmlFor="amount">Min Price</label>
+                <input name="amount" value={filterByToEdit.amount} onChange={onHandleChange} type="number" id="amount" />
+                <button>Submit</button>
+            </form>
+        </section>
+    )
+
+}
