@@ -1,7 +1,7 @@
 // import { loadFromStorage, saveToStorage } from './storage.service.js'
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
-
+import { booksData } from './books.js'
 const BOOK_KEY = 'bookDB'
 
 _createBooks()
@@ -47,11 +47,7 @@ function getDefaultFilter() {
 function _createBooks() {
     let books = utilService.loadFromStorage(BOOK_KEY)
     if (!books || !books.length) {
-        books = [
-            _createBook('It Ends with Us', 120),
-            _createBook('The Whistler', 190),
-            _createBook('The Book Thief', 250)
-        ]
+        books = booksData
         utilService.saveToStorage(BOOK_KEY, books)
     }
 }

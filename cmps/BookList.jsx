@@ -1,15 +1,14 @@
-export function BookList({ books }) {
+import { BookPreview } from "./BookPreview.jsx"
+
+export function BookList( {books} ) {
 
     return (
-        <section>
-            <h2>Book List</h2>
-            <ul className="book-list">
+        <section className="book-list-container">
                 {books.map(book =>
-                    <li key={book.id}>
-                        {book.title} {book.listPrice.amount} {book.listPrice.currencyCode}
-                    </li>
+                    <div key={book.id} className="book-card">
+                        <BookPreview book={book}/>
+                    </div>
                 )}
-            </ul>
         </section>
     )
 }
