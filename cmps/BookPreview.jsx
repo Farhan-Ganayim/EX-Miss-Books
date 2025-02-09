@@ -18,7 +18,7 @@ export function BookPreview({ book }) {
                 </p>
                 <p className="info-line book-price">
                     <span>Price:</span>
-                    <span>{book.listPrice.amount}</span>
+                    <span>€ {book.listPrice.amount}</span>
                 </p>
             </div>
         </article>
