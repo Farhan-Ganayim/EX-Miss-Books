@@ -1,22 +1,25 @@
 
 
-export function BookPreview({book}) {
+export function BookPreview({ book }) {
 
-    // console.log(book)
-    
     return (
-
-        <article className="book-preview">
+        <article className="book-card">
             <img
-                className="book-preview-img"
+                className="book-card-img"
                 src={book.thumbnail}
                 alt={book.title}
             />
 
-            <div className="book-preview-info">
-                <h2 className="book-preview-title">{book.title}</h2>
-                <p className="book-preview-authors">By: {book.authors}</p>
-                <p className="book-preview-price">Price: {book.listPrice.amount}</p>
+            <div className="book-card-info">
+                <h2 className="book-title">{book.title}</h2>
+                <p className="info-line book-authors">
+                    <span>By:</span>
+                    <span>{book.authors}</span>
+                </p>
+                <p className="info-line book-price">
+                    <span>Price:</span>
+                    <span>{book.listPrice.amount}</span>
+                </p>
             </div>
         </article>
     )

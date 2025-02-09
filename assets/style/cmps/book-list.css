@@ -1,4 +1,5 @@
 .book-list-container{
   flex-wrap: wrap;
   justify-content: center;
+  gap: 1em;
 }
