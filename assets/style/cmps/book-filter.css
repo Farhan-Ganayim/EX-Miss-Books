@@ -1,0 +1,14 @@
+.book-filter{
+    text-align:center;
+    margin-bottom: 1.5em;
+    background-color: var(--clr1bg-light);
+    border-radius: .5em;
+    h2{
+        padding: .5em;
+    }
+    form{
+        display: grid;
+        grid-auto-flow: column;
+        padding: .5em;
+    }
+}
