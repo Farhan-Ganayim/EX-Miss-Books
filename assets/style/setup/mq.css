@@ -40,6 +40,10 @@
             font-size: 90%;
         }
     }
+
+    .about-us {
+        font-size: 1.2em;
+    }
 }
 
 @media (width < 400px) {
@@ -54,6 +58,9 @@
         }
     }
 
+    .about-us {
+        font-size: 1em;
+    }
 }
 
 @media (width < 380px) {

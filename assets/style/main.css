@@ -14,5 +14,12 @@
 @import 'cmps/book-list.css';
 @import 'cmps/book-preview.css';
 @import 'cmps/book-filter.css';
+@import 'cmps/home-page.css';
+@import 'cmps/book-details.css';
+@import 'cmps/about-us.css';
 
 @import 'setup/mq.css';
+
+.app{
+    background-color:var(--gray3);
+}
