@@ -38,13 +38,13 @@
     }
 }
 
-@media (width < 350px) {
+@media (width < 380px) {
 
     .app-header {
         padding: .2em;
 
         .app-nav {
-            gap: .3em;
+            gap: .5em;
             font-size: 1em;
         }
     }
