@@ -16,7 +16,3 @@
 @import 'cmps/book-filter.css';
 
 @import 'setup/mq.css';
-
-.app{
-    background-color:rgb(55, 58, 55) ;
-}

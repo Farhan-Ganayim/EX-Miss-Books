@@ -14,10 +14,10 @@ export function BookFilter({ filterBy, onSetFilterBy }) {
 
     }
 
-    function onSubmitForm(ev) {
-        ev.preventDefault()
-        onSetFilterBy()
-    }
+    // function onSubmitForm(ev) {
+    //     ev.preventDefault()
+    //     onSetFilterBy()
+    // }
 
     return (
         <section className="book-filter">

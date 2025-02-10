@@ -1,4 +1,3 @@
-// import { loadFromStorage, saveToStorage } from './storage.service.js'
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
 import { booksData } from './books2.js'
@@ -8,9 +7,9 @@ _createBooks()
 
 export const bookService = {
     query,
-    // get,
-    // remove,
-    // save,
+    getById,
+    remove,
+    save,
     getEmptyBook,
     getDefaultFilter,
 }
@@ -26,6 +25,21 @@ function query(filterBy = {}) {
             }
             return books
         })
+}
+function getById(bookId) {
+    return storageService.get(BOOK_KEY, bookId)
+}
+
+function remove(bookId) {
+    return storageService.remove(BOOK_KEY, bookId)
+}
+
+function save(book) {
+    if (book.id) {
+        return storageService.put(KEY, book)
+    } else {
+        return storageService.post(KEY, book)
+    }
 }
 
 function getEmptyBook(title = '', amount = 0) {
