@@ -32,10 +32,6 @@
     .book-list-container {
         gap: .5em;
 
-        .book-card {
-            width: 170px;
-        }
-
         .book-card-info {
             font-size: 90%;
         }
@@ -43,6 +39,15 @@
 
     .about-us {
         font-size: 1.2em;
+    }
+}
+
+@media (width < 500px) {
+    .book-list-container {
+
+        .book-card {
+            width: 180px;
+        }
     }
 }
 
