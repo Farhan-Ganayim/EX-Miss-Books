@@ -22,6 +22,8 @@ export function BookPreview({ book }) {
                 </p>
                 
             </div>
+            <button>Select</button>
+            <button>Delete</button>
         </article>
     )
 }

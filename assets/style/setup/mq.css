@@ -33,9 +33,27 @@
         gap: .5em;
 
         .book-card {
-            width: 150px;
+            width: 170px;
+        }
+
+        .book-card-info {
+            font-size: 90%;
         }
     }
+}
+
+@media (width < 400px) {
+    .book-list-container {
+
+        .book-card {
+            width: 150px;
+
+            .book-card-info {
+                font-size: 80%;
+            }
+        }
+    }
+
 }
 
 @media (width < 380px) {
@@ -52,11 +70,7 @@
     .book-list-container {
 
         .book-card {
-            width: 120px;
-
-            .book-card-info {
-                font-size: 80%;
-            }
+            width: 140px;
         }
     }
 
@@ -75,6 +89,21 @@
                 width: 75%;
                 place-self: center;
             }
+        }
+    }
+}
+
+@media (width < 350px) {
+
+    .book-list-container {
+        gap: .5em;
+
+        .book-card {
+            width: 250px;
+        }
+
+        .book-card-info {
+            font-size: 90%;
         }
     }
 }

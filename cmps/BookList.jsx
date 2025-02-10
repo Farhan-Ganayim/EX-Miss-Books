@@ -7,7 +7,7 @@ export function BookList( {books} ) {
                 {books.map(book =>
                     <div key={book.id} className="book-preview-container">
                         <BookPreview book={book}/>
-                        <button></button>
+                        {/* <button></button> */}
                     </div>
                 )}
         </section>
