@@ -1,0 +1,80 @@
+@media (width < 700px) {
+
+    .app-header {
+        padding: .6em;
+
+        .app-nav {
+            gap: .8em;
+            font-size: 1.3em;
+        }
+    }
+
+    .book-filter {
+        width: 70%;
+        place-self: center;
+
+        h2 {
+            margin-block-end: 0;
+            padding-bottom: 0;
+        }
+
+        form {
+            grid-auto-flow: row;
+
+            input {
+                width: 55%;
+                place-self: center;
+            }
+        }
+
+    }
+
+    .book-list-container {
+        gap: .5em;
+
+        .book-card {
+            width: 150px;
+        }
+    }
+}
+
+@media (width < 350px) {
+
+    .app-header {
+        padding: .2em;
+
+        .app-nav {
+            gap: .3em;
+            font-size: 1em;
+        }
+    }
+
+    .book-list-container {
+
+        .book-card {
+            width: 120px;
+
+            .book-card-info {
+                font-size: 80%;
+            }
+        }
+    }
+
+    .book-filter {
+        width: 85%;
+
+        h2 {
+            margin-block-end: 0;
+            padding-bottom: 0;
+        }
+
+        form {
+            grid-auto-flow: row;
+
+            input {
+                width: 75%;
+                place-self: center;
+            }
+        }
+    }
+}

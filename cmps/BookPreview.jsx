@@ -20,6 +20,7 @@ export function BookPreview({ book }) {
                     <span>Price:</span>
                     <span>€ {book.listPrice.amount}</span>
                 </p>
+                
             </div>
         </article>
     )
