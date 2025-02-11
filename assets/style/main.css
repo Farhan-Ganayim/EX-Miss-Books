@@ -20,6 +20,6 @@
 
 @import 'setup/mq.css';
 
-.app{
+.app,html{
     background-color:var(--gray3);
 }

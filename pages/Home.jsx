@@ -1,9 +1,12 @@
+const { Link, NavLink } = ReactRouterDOM
 
-export function Home({onSetPage}) {
+export function Home({ onSetPage }) {
     return (
         <section className="home-greeting">
             <h2>Welcome to MissBook Shop!!!</h2>
-            <button className="btn-explore-books" onClick={()=>onSetPage('books')}>Explore our Library</button>
+            <button className="btn-explore-books">
+                <Link to="/books">Explore our Library</Link>
+            </button>
         </section>
     )
 }
