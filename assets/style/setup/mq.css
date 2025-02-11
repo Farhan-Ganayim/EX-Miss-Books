@@ -1,9 +1,21 @@
+@media (width < 950px) {
+    .book-filter {
+        form {
+            gap: 1em;
+        }
+    }
+}
+
 @media (width < 700px) {
 
     .app-header {
         padding: .6em;
+        .header-logo{
+            margin-left: 1em;
+        }
 
         .app-nav {
+            margin-right: 1em;
             gap: .8em;
             font-size: 1.3em;
         }
@@ -20,9 +32,9 @@
 
         form {
             grid-auto-flow: row;
+            gap: .5em;
 
             input {
-                width: 55%;
                 place-self: center;
             }
         }
@@ -43,6 +55,14 @@
 }
 
 @media (width < 500px) {
+    .app-header {
+        .header-logo{
+            margin-left: 0;
+        }
+       .app-nav{
+        margin-right: 0;
+       } 
+    }
     .book-list-container {
 
         .book-card {
