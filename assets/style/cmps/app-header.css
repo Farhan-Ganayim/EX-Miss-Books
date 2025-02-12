@@ -2,7 +2,8 @@
     background-color: var(--clr1);
     color: var(--clr1bg);
     padding-block: 1em;
-    .header-logo{
+
+    .header-logo {
         margin-left: 3em;
     }
 
@@ -11,6 +12,12 @@
         font-size: 1.5em;
         font-family: Arial, Helvetica, sans-serif;
         margin-right: 3em;
+
+        a.active {
+            color: rgb(146, 212, 246);
+            font-weight:550;
+            text-decoration: underline;
+        }
 
     }
 

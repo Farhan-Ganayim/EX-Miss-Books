@@ -1,17 +1,19 @@
 import { bookService } from "../services/book.services.js"
 const { useEffect, useState } = React
+const { useParams, useNavigate, Link } = ReactRouterDOM
 
-export function BookDetails({ selectedBookId, onGoBack }) {
-    //  let book = bookService.getById(selectedBook)
+export function BookDetails() {
 
     const [book, setBook] = useState(null)
+    const params = useParams()
+
     useEffect(() => {
-        if (!selectedBookId) return
+        if (!params.bookId) return
         else {
-            bookService.getById(selectedBookId)
+            bookService.getById(params.bookId)
                 .then((book) => setBook(book))
         }
-    })
+    }, [params.bookId])
 
     if (!book) return <div>Loading...</div>
     const { title,
@@ -26,14 +28,13 @@ export function BookDetails({ selectedBookId, onGoBack }) {
     return (
         <section className="book-details">
             <img src={thumbnail} alt={title} />
-
             <div className="book-details-info">
                 <h2>{title}</h2>
                 <h4>{subtitle}</h4>
                 <p>Price: {listPrice.amount} {listPrice.currencyCode}</p>
                 <p>{description}</p>
             </div>
-            <button onClick={onGoBack}>Back to List</button>
+            <button><Link to="/books">Back to List</Link></button>
         </section>
     )
 }

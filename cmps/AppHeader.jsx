@@ -6,9 +6,9 @@ export function AppHeader({ onSetPage }) {
             {/* <section className=""> */}
             <h1 className="header-logo">Miss Book</h1>
             <nav className="app-nav flex">
-             <Link to="/">Home</Link>
-             <Link to="/about">About</Link>
-             <Link to="/books">Books</Link>
+             <NavLink to="/">Home</NavLink>
+             <NavLink to="/about">About</NavLink>
+             <NavLink to="/books">Books</NavLink>
 
             </nav>
             {/* </section> */}

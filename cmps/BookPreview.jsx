@@ -1,9 +1,10 @@
 
+const { Link } = ReactRouterDOM
 
-export function BookPreview({ book, onSelectBook, onRemoveBook }) {
+export function BookPreview({ book, onRemoveBook }) {
 
     return (
-        
+
         <article className="book-card">
             <img
                 className="book-card-img"
@@ -21,7 +22,7 @@ export function BookPreview({ book, onSelectBook, onRemoveBook }) {
                     <span>€ {book.listPrice.amount}</span>
                 </p>
             </div>
-            <button onClick={() => onSelectBook(book.id)}>Select</button>
+            <button><Link to={`/books/${book.id}`}>Select</Link></button>
             <button onClick={() => onRemoveBook(book.id)}>Delete</button>
         </article>
     )

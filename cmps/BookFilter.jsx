@@ -14,11 +14,6 @@ export function BookFilter({ filterBy, onSetFilterBy }) {
 
     }
 
-    // function onSubmitForm(ev) {
-    //     ev.preventDefault()
-    //     onSetFilterBy()
-    // }
-
     return (
         <section className="book-filter">
             <h2>Filter Our Books</h2>
@@ -40,7 +35,6 @@ export function BookFilter({ filterBy, onSetFilterBy }) {
                     type="number"
                     id="amount"
                 />
-                {/* <button>Submit</button> */}
             </form>
         </section>
     )
