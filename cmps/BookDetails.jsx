@@ -35,6 +35,7 @@ export function BookDetails() {
                 <p>{description}</p>
             </div>
             <button><Link to="/books">Back to List</Link></button>
+            <button><Link to={`/books/edit/${params.bookId}`}>Edit Book</Link></button>
         </section>
     )
 }

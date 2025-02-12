@@ -1,4 +1,6 @@
 import { BookPreview } from "./BookPreview.jsx"
+const { Link } = ReactRouterDOM
+
 
 export function BookList({ books, onRemoveBook }) {
 
@@ -6,6 +8,14 @@ export function BookList({ books, onRemoveBook }) {
 
     return (
         <section className="book-list-container flex justify-center">
+            <div className="add-book-container">
+
+               <button>
+                <Link to="/books/edit">Add Book</Link>
+                </button> 
+                
+            </div>
+
             {books.map(book =>
                 <div key={book.id} className="book-preview-container">
                     <BookPreview book={book}

@@ -2,12 +2,10 @@
   box-sizing: border-box;
 }
 
-html {
-}
+html {}
 
 body {
   margin: 0;
-  color: var(--gray3);
 }
 
 h1,

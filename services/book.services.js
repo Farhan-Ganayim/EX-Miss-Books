@@ -36,9 +36,9 @@ function remove(bookId) {
 
 function save(book) {
     if (book.id) {
-        return storageService.put(KEY, book)
+        return storageService.put(BOOK_KEY, book)
     } else {
-        return storageService.post(KEY, book)
+        return storageService.post(BOOK_KEY, book)
     }
 }
 
