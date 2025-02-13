@@ -25,7 +25,7 @@ export function BookEdit() {
                 value = target.value || bookToEdit.title
                 break
             case 'price':
-                value = +target.value || bookToEdit.listPrice.amount
+                if (value !== '') value = +target.value || bookToEdit.listPrice.amount
                 break
         }
 
