@@ -20,6 +20,7 @@ export function BookDetails() {
         subtitle,
         authors,
         description,
+        pageCount,
         thumbnail,
         language,
         categories,
@@ -63,6 +64,10 @@ export function BookDetails() {
                     <p>
                         <span>Authors: </span>
                         {authors}
+                    </p>
+                    <p>
+                        <span>Number of pages: </span>
+                        {pageCount}
                     </p>
                     <button><Link to="/books">Back to List</Link></button>
                     <button><Link to={`/books/edit/${params.bookId}`}>Edit Book</Link></button>
