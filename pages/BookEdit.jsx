@@ -27,12 +27,39 @@ export function BookEdit() {
             case 'price':
                 if (value !== '') value = +target.value || bookToEdit.listPrice.amount
                 break
+            case 'authors':
+                value = value || bookToEdit.authors
+                break
+            case 'description':
+                value = value || bookToEdit.description
+                break
+            case 'pages':
+                if (value !== '') value = +value || bookToEdit.pageCount
+
+                break
+            case 'isOnSale':
+                value = target.checked
+                break
+            default:
+                break
         }
 
         if (field === 'price') {
-            setBookToEdit((prevBook) => ({ ...prevBook, listPrice: { ...prevBook.listPrice, amount: value } }))
-        } else {
-            setBookToEdit((prevBook) => ({ ...prevBook, [field]: value }))
+            setBookToEdit((prevBook) => ({
+                ...prevBook, listPrice: { ...prevBook.listPrice, amount: value }
+            }))
+        } else if (field === 'pages') {
+            setBookToEdit((prevBook) => ({
+                ...prevBook, pageCount: value
+            }))
+
+        }
+        else {
+            setBookToEdit(prevBook => ({
+                ...prevBook,
+                [field]: value
+            }))
+
         }
     }
 
@@ -48,22 +75,41 @@ export function BookEdit() {
 
     }
 
-    const { title, listPrice } = bookToEdit
+    const { title,
+        subtitle,
+        authors,
+        description,
+        pageCount,
+        language,
+        categories,
+        listPrice } = bookToEdit
+
     console.log(bookId)
 
     return (
-        <section className="book-edit">
+        <section className="book-edit-container">
 
             <h1>{bookId ? 'Book Edit' : 'Book Add'}</h1>
 
-            <form onSubmit={onSaveBook}>
+            <form className="grid" onSubmit={onSaveBook}>
 
                 <label htmlFor="title">Title:</label>
                 <input type="text" id="title" value={title} onChange={handleChange} name="title" />
 
+                <label htmlFor="authors">Authors:</label>
+                <input type="text" id="authors" value={authors} onChange={handleChange} name="authors" />
+
+                <label htmlFor="description">Description:</label>
+                <input type="text" id="description" value={description} onChange={handleChange} name="description" />
+
+                <label htmlFor="pages">Number of pages:</label>
+                <input type="number" id="pages" value={pageCount} onChange={handleChange} name="pages" />
+
                 <label htmlFor="price">Price:</label>
                 <input type="number" id="price" value={listPrice.amount || ''} onChange={handleChange} name="price" />
 
+                <label htmlFor="isOnSale">On Sale:</label>
+                <input type="checkbox" id="isOnSale" onChange={handleChange} name="isOnSale" />
                 <button>Save</button>
             </form>
         </section>

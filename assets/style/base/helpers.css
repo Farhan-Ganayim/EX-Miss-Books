@@ -4,6 +4,10 @@
   display: flex;
 }
 
+.grid{
+    display: grid;
+}
+
 .flex.flex-column{
     flex-direction: column;
 }
@@ -18,6 +22,9 @@
 
 .flex.align-center{
     align-items: center;
+}
+.place-center{
+    place-self: center;
 }
 
 /* text helpers */

@@ -17,6 +17,7 @@
 @import 'cmps/home-page.css';
 @import 'cmps/book-details.css';
 @import 'cmps/about-us.css';
+@import 'cmps/book-edit.css';
 
 @import 'setup/mq.css';
 

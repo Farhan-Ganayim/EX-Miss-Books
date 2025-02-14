@@ -3,6 +3,20 @@ const { Link } = ReactRouterDOM
 
 export function BookPreview({ book, onRemoveBook }) {
 
+    function currencyToSymbol(cur) {
+        switch (cur) {
+            case "USD":
+                return "$"
+                break
+            case "EUR":
+                return "€"
+                break
+            case "ILS":
+                return "₪"
+                break
+        }
+    }
+
     return (
 
         <article className="book-card">
@@ -19,7 +33,7 @@ export function BookPreview({ book, onRemoveBook }) {
                 </p>
                 <p className="info-line book-price">
                     <span>Price:</span>
-                    <span>€ {book.listPrice.amount}</span>
+                    <span> {book.listPrice.amount} {currencyToSymbol(book.listPrice.currencyCode)}</span>
                 </p>
             </div>
             <button><Link to={`/books/${book.id}`}>Select</Link></button>

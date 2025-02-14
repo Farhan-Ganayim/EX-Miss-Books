@@ -25,17 +25,49 @@ export function BookDetails() {
         categories,
         listPrice } = book
 
+    function getBookLng(lng) {
+        switch (lng) {
+            case 'he':
+                return 'Hebrew'
+            case 'sp':
+                return 'Spanish'
+            default:
+                return 'English'
+        }
+    }
+
     return (
-        <section className="book-details">
-            <img src={thumbnail} alt={title} />
-            <div className="book-details-info">
-                <h2>{title}</h2>
-                <h4>{subtitle}</h4>
-                <p>Price: {listPrice.amount} {listPrice.currencyCode}</p>
-                <p>{description}</p>
-            </div>
-            <button><Link to="/books">Back to List</Link></button>
-            <button><Link to={`/books/edit/${params.bookId}`}>Edit Book</Link></button>
+        <section className="book-details-container place-center">
+            <h2 className="book-title"> {title}</h2>
+            <h4 className="book-subtitle">{subtitle}</h4>
+            <section className="book-details flex">
+                <img src={thumbnail} alt={title} />
+                <div className="book-details-info">
+                    <p>
+                        <span>price: </span>
+                        {listPrice.amount} {listPrice.currencyCode}
+                    </p>
+                    <p>
+                        <span>Language: </span>
+                        {getBookLng(language)}
+
+                    </p>
+                    <p>
+                        <span>description: </span>
+                        {description}
+                    </p>
+                    <p>
+                        <span>Category: </span>
+                        {categories}
+                    </p>
+                    <p>
+                        <span>Authors: </span>
+                        {authors}
+                    </p>
+                    <button><Link to="/books">Back to List</Link></button>
+                    <button><Link to={`/books/edit/${params.bookId}`}>Edit Book</Link></button>
+                </div>
+            </section>
         </section>
     )
 }
