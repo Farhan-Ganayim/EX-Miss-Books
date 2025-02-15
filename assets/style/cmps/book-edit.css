@@ -10,4 +10,10 @@
         grid-template-columns: 1fr 1fr;
         gap: 1em
     }
+
+    button {
+
+        place-self: center;
+        width: 10em;
+    }
 }
