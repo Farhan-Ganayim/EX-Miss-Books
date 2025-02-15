@@ -42,6 +42,23 @@ function save(book) {
     }
 }
 
+const imgUrls = [
+    './assets/img/1.jpg',
+    './assets/img/2.jpg',
+    './assets/img/3.jpg',
+    './assets/img/4.jpg',
+    './assets/img/5.jpg',
+    './assets/img/6.jpg',
+    './assets/img/7.jpg',
+    './assets/img/8.jpg',
+    './assets/img/9.jpg'
+]
+function pickRandomImg(){
+    const idx =utilService.getRandomInt(0,imgUrls.length)
+    const randomImg=imgUrls[idx]
+    return randomImg
+}
+
 function getEmptyBook(title = '', amount = 0) {
     return {
         id: '',
@@ -50,7 +67,8 @@ function getEmptyBook(title = '', amount = 0) {
             amount,
             currencyCode: 'EUR',
             isOnSale: false
-        }
+        },
+        thumbnail: pickRandomImg()
     }
 }
 

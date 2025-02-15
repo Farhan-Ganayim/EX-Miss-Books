@@ -4,6 +4,7 @@ export const utilService = {
     makeId,
     makeLorem,
     getRandomIntInclusive,
+    getRandomInt,
     getDayName,
     getMonthName,
     animateCSS
@@ -30,6 +31,13 @@ function makeLorem(size = 100) {
     }
     return txt
 }
+
+function getRandomInt(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
+  }
+  
 
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min)
