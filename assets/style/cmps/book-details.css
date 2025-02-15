@@ -9,13 +9,12 @@
         background-color: #334d32;
         color: rgb(121, 160, 126);
     }
-    
+
     .book-subtitle {
         text-align: center;
         background-color: #557054;
-        margin: 0;
-        height: 2em;
-        padding-top: .3em;
+        margin-top: 0;
+        padding: .5em 1em;
         color: rgb(179, 207, 193);
     }
 
@@ -27,7 +26,8 @@
         .book-details-info {
             margin-top: 1em;
         }
-        span{
+
+        span {
             font-weight: 600;
             color: #1d5c1b;
         }
