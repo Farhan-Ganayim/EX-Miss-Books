@@ -44,6 +44,14 @@ export function BookDetails() {
             <section className="book-details flex">
                 <img src={thumbnail} alt={title} />
                 <div className="book-details-info">
+                    <nav className='book-details-nav'>
+                        <Link to={`/books/${book.prevBookId}`}>
+                            <button><i className="fa-solid fa-arrow-left"></i></button>
+                        </Link>
+                        <Link to={`/books/${book.nextBookId}`}>
+                            <button><i className="fa-solid fa-arrow-right"></i></button>
+                        </Link>
+                    </nav>
                     <p>
                         <span>price: </span>
                         {listPrice.amount} {listPrice.currencyCode}
@@ -51,7 +59,6 @@ export function BookDetails() {
                     <p>
                         <span>Language: </span>
                         {getBookLng(language)}
-
                     </p>
                     <p>
                         <span>description: </span>

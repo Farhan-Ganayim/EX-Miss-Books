@@ -28,6 +28,7 @@ function query(filterBy = {}) {
 }
 function getById(bookId) {
     return storageService.get(BOOK_KEY, bookId)
+        .then(book => _setNextPrevBookId(book))
 }
 
 function remove(bookId) {
@@ -53,9 +54,9 @@ const imgUrls = [
     './assets/img/8.jpg',
     './assets/img/9.jpg'
 ]
-function pickRandomImg(){
-    const idx =utilService.getRandomInt(0,imgUrls.length)
-    const randomImg=imgUrls[idx]
+function pickRandomImg() {
+    const idx = utilService.getRandomInt(0, imgUrls.length)
+    const randomImg = imgUrls[idx]
     return randomImg
 }
 
@@ -88,4 +89,16 @@ function _createBook(title, amount = 150) {
     const book = getEmptyBook(title, amount)
     book.id = utilService.makeId()
     return book
+}
+
+function _setNextPrevBookId(book) {
+    return storageService.query(BOOK_KEY)
+        .then((books) => {
+            const bookIdx = books.findIndex((currBook) => currBook.id === book.id)
+            const nextBook = books[bookIdx + 1] ? books[bookIdx + 1] : books[0]
+            const prevBook = books[bookIdx - 1] ? books[bookIdx - 1] : books[books.length - 1]
+            book.nextBookId = nextBook.id
+            book.prevBookId = prevBook.id
+            return book
+        })
 }
