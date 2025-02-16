@@ -3,6 +3,10 @@
     max-width: 60vw;
     background-color: rgb(134, 151, 156);
 
+    img {
+        max-width: 500px;
+    }
+
     .book-title {
         text-align: center;
         margin: 0;
