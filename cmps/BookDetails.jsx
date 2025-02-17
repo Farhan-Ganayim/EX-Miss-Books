@@ -55,7 +55,7 @@ export function BookDetails() {
     }
 
     function onToggleReviewModal() {
-        setIsShowReviewModal((prevIsReviewModal) => !prevIsReviewModal)
+        setIsShowReviewModal(prevIsReviewModal => !prevIsReviewModal)
     }
 
     function getStarsRating(rating) {
@@ -74,7 +74,7 @@ export function BookDetails() {
             <section className="book-details flex">
                 <img src={thumbnail} alt={title} />
                 <div className="book-details-info">
-                    <nav className='book-details-nav'>
+                    <nav className='book-details-nav flex'>
                         <Link to={`/books/${book.prevBookId}`}>
                             <button><i className="fa-solid fa-arrow-left"></i></button>
                         </Link>

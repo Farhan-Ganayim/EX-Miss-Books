@@ -10,7 +10,7 @@ export function AddReview({ onAddReview, toggleReview }) {
 
         return {
             id: '',
-            fullName: 'new name',
+            fullName: '',
             rating: '',
             date: new Date().toISOString().slice(0, 10),
             txt: '',

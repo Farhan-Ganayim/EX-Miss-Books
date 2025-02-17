@@ -1,8 +1,8 @@
 const { useEffect, useState } = React
 const { useParams, useNavigate } = ReactRouterDOM
+import { eventBusService, showSuccessMsg } from "../services/event-bus.service.js"
 
 import { bookService } from "../services/book.services.js"
-
 
 export function BookEdit() {
     const [bookToEdit, setBookToEdit] = useState(bookService.getEmptyBook())
@@ -15,8 +15,6 @@ export function BookEdit() {
                 .then(bookToEdit => setBookToEdit(bookToEdit))
         }
     }, [bookId])
-
-
 
     function handleChange({ target }) {
         let { value, name: field } = target
@@ -52,14 +50,12 @@ export function BookEdit() {
             setBookToEdit((prevBook) => ({
                 ...prevBook, pageCount: value
             }))
-
         }
         else {
             setBookToEdit(prevBook => ({
                 ...prevBook,
                 [field]: value
             }))
-
         }
     }
 
@@ -70,9 +66,9 @@ export function BookEdit() {
         bookService.save(bookToEdit)
             .then(savedBook => {
                 console.log('savedBook', savedBook)
+                showSuccessMsg('Book added succesfully')
                 navigate('/books')
             })
-
     }
 
     const { title,
@@ -83,8 +79,6 @@ export function BookEdit() {
         language,
         categories,
         listPrice } = bookToEdit
-
-    console.log(bookId)
 
     return (
         <section className="book-edit-container">

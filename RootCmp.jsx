@@ -8,6 +8,7 @@ import { AboutUs } from "./pages/About.jsx"
 import { AppHeader } from "./cmps/AppHeader.jsx"
 import { BookDetails } from "./cmps/BookDetails.jsx"
 import { BookEdit } from "./pages/BookEdit.jsx"
+import { UserMsg } from "./cmps/UserMsg.jsx"
 
 export function App() {
 
@@ -20,6 +21,7 @@ export function App() {
         <Router>
             <section className="app">
                 <AppHeader onSetPage={onSetPage} />
+                <UserMsg />
                 <main className="main-layout">
                     <Routes>
                         <Route path="/" element={<Home />} />
