@@ -2,19 +2,16 @@ import { utilService } from "../services/util.service.js"
 
 const { useState } = React
 
-
-export function AddReview({ onAddReview ,toggleReview}) {
+export function AddReview({ onAddReview, toggleReview }) {
 
     const [reviewToAdd, setReviewToAdd] = useState(getEmptyReview())
-
-
 
     function getEmptyReview() {
 
         return {
             id: '',
             fullName: 'new name',
-            rating: 0,
+            rating: '',
             date: new Date().toISOString().slice(0, 10),
             txt: '',
         }
@@ -24,10 +21,8 @@ export function AddReview({ onAddReview ,toggleReview}) {
         let { value, name: field } = target
         if (field === 'rating') value = +value
         setReviewToAdd((prevReview) => ({ ...prevReview, [field]: value }))
-
-
-
     }
+
     function onSubmitForm(ev) {
         ev.preventDefault()
         const newReview = { ...reviewToAdd, id: utilService.makeId() }
@@ -38,13 +33,12 @@ export function AddReview({ onAddReview ,toggleReview}) {
 
     }
 
-
     return (
         <section className="add-review">
             <h3>Add a review</h3>
             <button className='btn-toggle-modal'
-                    onClick={toggleReview}>X
-                </button>
+                onClick={toggleReview}>X
+            </button>
             <form onSubmit={onSubmitForm}>
                 <label htmlFor="fullname">Full Name</label>
                 <input

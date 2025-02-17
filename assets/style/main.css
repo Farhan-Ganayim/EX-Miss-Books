@@ -18,6 +18,8 @@
 @import 'cmps/book-details.css';
 @import 'cmps/about-us.css';
 @import 'cmps/book-edit.css';
+@import 'cmps/add-review.css';
+@import 'cmps/reviews-list.css';
 
 @import 'setup/mq.css';
 

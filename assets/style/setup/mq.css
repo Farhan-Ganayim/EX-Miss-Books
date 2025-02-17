@@ -86,6 +86,21 @@
             }
         }
     }
+
+    .review-modal-container {
+
+        .modal-content {
+
+            form {
+                grid-template-columns: 1fr;
+                gap: .5em;
+
+                button {
+                    place-self: center;
+                }
+            }
+        }
+    }
 }
 
 @media (width < 500px) {

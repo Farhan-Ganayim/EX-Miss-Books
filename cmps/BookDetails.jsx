@@ -58,7 +58,14 @@ export function BookDetails() {
         setIsShowReviewModal((prevIsReviewModal) => !prevIsReviewModal)
     }
 
-
+    function getStarsRating(rating) {
+        const fullStar = '★'
+        const emptyStar = '☆'
+        const maxStars = 5
+        let starRating = fullStar.repeat(rating)
+        starRating += emptyStar.repeat(maxStars - rating)
+        return starRating
+    }
 
     return (
         <section className="book-details-container place-center">
@@ -110,25 +117,30 @@ export function BookDetails() {
                         <section className="book-reviews-container">
                             {book.reviews.map(review => (
                                 <div className="book-review" key={review.id}>
-                                    <p>name: {review.fullName} {review.rating}</p>
-                                    <p>Read at: {review.date}</p>
-                                    <p>Review: {review.txt}</p>
-                                    <button onClick={() => onRemoveReview(review.id)}>Remove</button>
+                                    <p><span>Name:</span> {review.fullName}</p>
+                                    <p><span>Rating:</span> {getStarsRating(review.rating)}</p>
+                                    <p><span>Read at:</span> {review.date}</p>
+                                    <p><span>Review:</span> {review.txt}</p>
+                                    <button onClick={() => onRemoveReview(review.id)}>x</button>
                                 </div>
                             ))}
                         </section>
                     )
                     : (<p>No reviews yet</p>)
                 }
-                  <button onClick={onToggleReviewModal}>Add+</button>
+                <button onClick={onToggleReviewModal}>Add+</button>
 
-                    {isShowReviewModal && (
-                        <AddReview
-                            onAddReview={onAddReview}
-                            toggleReview={onToggleReviewModal}
-                        />
+                {isShowReviewModal && (
+                    <div className="review-modal-container">
+                        <div className="modal-content">
+                            <AddReview
+                                onAddReview={onAddReview}
+                                toggleReview={onToggleReviewModal}
+                            />
+                        </div>
+                    </div>
 
-                    )}
+                )}
             </section>
         </section>
     )

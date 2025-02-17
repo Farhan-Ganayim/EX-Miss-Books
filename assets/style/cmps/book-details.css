@@ -29,6 +29,12 @@
 
         .book-details-info {
             margin-top: 1em;
+
+            .book-details-nav {
+                place-self: center;
+                margin-bottom: 2em;
+
+            }
         }
 
         span {
