@@ -80,6 +80,10 @@
             .book-details-info {
                 margin-top: 0;
 
+                .book-details-nav {
+                    margin-bottom: 0;
+                }
+
                 p {
                     margin-block-end: 0;
                 }
