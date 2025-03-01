@@ -15,11 +15,13 @@ export function BookList({ books, onRemoveBook }) {
             </div>
             <section className="book-list flex justify-center">
                 {books.map(book =>
-                    <div key={book.id} className="book-preview-container">
-                        <BookPreview book={book}
-                            onRemoveBook={onRemoveBook}
-                        />
-                    </div>
+                    <Link to={`/books/${book.id}`}>Select
+                        <div key={book.id} className="book-preview-container">
+                            <BookPreview book={book}
+                                onRemoveBook={onRemoveBook}
+                            />
+                        </div>
+                    </Link>
                 )}
             </section>
         </section>
